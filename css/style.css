@@ -208,10 +208,45 @@ footer {
     border-color: #fff;
 }
 
+.flowchart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    position: relative;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .flowchart-container { flex-direction: column; }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-    .nav-links { display: none; }
-    h1 { font-size: 2.5rem; }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 1rem;
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    nav { flex-direction: column; }
+    h1 { font-size: 2.5rem !important; }
+    h1 span.subtitle { font-size: 1.75rem !important; }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
 }
 
 /* Cookie Banner */
