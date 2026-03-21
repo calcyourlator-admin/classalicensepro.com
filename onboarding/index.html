@@ -94,8 +94,8 @@
                         </div>
                         <div class="form-group">
                             <label for="entity-status">Entity Status</label>
-                            Use this form to connect with us — we’ll respond within one business day with next steps.
-                        </p>tion value="" disabled selected>Select status...</option>
+                            <select name="Entity Status" id="entity-status" required>
+                                <option value="" disabled selected>Select status...</option>
                                 <option value="Ready Now - Manager-Managed LLC">Ready Now - Manager-Managed LLC</option>
                                 <option value="Not Formed Yet - Will form/convert">Not Formed Yet - Will form/convert</option>
                             </select>
@@ -142,9 +142,8 @@
                 </div>
                 <div>
                     <h5 style="color: #fff; margin-bottom: 1rem;">Institutional Status</h5>
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="color: var(--accent);">📍</div>
-                                <span>401 Maryland Dr STE S, Richmond VA 23294</span>dding: 0.5rem 0.75rem; border-radius: 0.25rem; border: 1px solid rgba(234, 179, 8, 0.2); font-size: 0.7rem; color: var(--accent); font-weight: 700;">
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; background: rgba(124, 179, 66, 0.1); padding: 0.5rem 0.75rem; border-radius: 0.25rem; border: 1px solid rgba(124, 179, 66, 0.2); font-size: 0.7rem; color: var(--accent); font-weight: 700;">
                             <svg style="width: 14px; height: 14px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 16 14"/></svg>
                             MANAGER-MANAGED LLC SPECIALIST
                         </div>
@@ -154,14 +153,16 @@
                         </a>
                     </div>
                 </div>
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="color: var(--accent);">📞</div>
-                                <span>301 288 1208</span>
+                <div>
+                    <h5 style="color: #fff; margin-bottom: 1rem;">Contact</h5>
+                    <p>josh@classalicensepro.com</p>
+                </div>
+            </div>
             <div class="footer-bottom">
                 <p>&copy; 2026 Class A License Pro, LLC. Clients retain 100% business ownership.</p>
-                            <div style="display: flex; align-items: center; gap: 1rem;">
-                                <div style="color: var(--accent);">✉</div>
-                                <a href="mailto:josh@classalicensepro.com" style="color: inherit; text-decoration: none;">josh@classalicensepro.com</a>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="../privacy-policy.html" style="color: inherit; text-decoration: none;">Privacy Policy</a>
+                    <a href="../terms-of-service.html" style="color: inherit; text-decoration: none;">Terms of Service</a>
                     <a href="javascript:void(0)" onclick="document.getElementById('cookie-banner').classList.add('active')" style="color: inherit; text-decoration: none;">Cookie Settings</a>
                 </div>
             </div>

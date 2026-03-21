@@ -341,3 +341,8 @@ footer {
 }
 
 a { word-break: break-word; }
+
+/* Enhanced Mobile Anchor Scrolling */
+@media (max-width: 768px) {
+    #contact { scroll-margin-top: 15rem; }
+}
