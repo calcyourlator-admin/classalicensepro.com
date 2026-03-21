@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --primary: #030712; /* Very Deep Navy */
     --secondary: #111827; /* Slate 900 */
     --accent: #7CB342; /* Action Green (Yellow-leaning Success Green) */
@@ -303,3 +303,41 @@ footer {
     .cookie-content { flex-direction: column; text-align: center; }
     .cookie-buttons { flex-direction: column; width: 100%; }
 }
+
+/* Share Links */
+.share-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.share-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+.share-links a:hover {
+    background: var(--accent);
+    color: var(--primary);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+.share-links svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Global Mobile Fixes for Overflow & Margin */
+@media (max-width: 768px) {
+    main { margin-top: 8rem; }
+    .card { padding: 1.5rem !important; }
+    .h-captcha { overflow: hidden; display: flex; justify-content: center; }
+}
+
+a { word-break: break-word; }
