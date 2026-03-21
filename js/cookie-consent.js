@@ -53,29 +53,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // 2. Anti-spam link blocking
+            // 2. Anti-spam link blocking (respects link_scanning bypass)
             const formData = new FormData(form);
-            let hasLink = false;
-            const urlPattern = /(https?:\/\/|www\.|[a-z0-9]+\.[a-z]{2,})/i;
+            
+            if (formData.get('link_scanning') !== 'false') {
+                let hasLink = false;
+                const urlPattern = /(https?:\/\/|www\.|[a-z0-9]+\.[a-z]{2,})/i;
 
-            for (let [name, value] of formData.entries()) {
-                // Ignore Web3forms hidden configuration fields that may contain URLs
-                if (['access_key', 'subject', 'from_name', 'redirect', 'botcheck'].includes(name)) {
-                    continue;
-                }
+                for (let [name, value] of formData.entries()) {
+                    // Ignore Web3forms hidden configuration fields that may contain URLs
+                    if (['access_key', 'subject', 'from_name', 'redirect', 'botcheck', 'link_scanning'].includes(name)) {
+                        continue;
+                    }
 
-                if (typeof value === 'string' && urlPattern.test(value)) {
-                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailPattern.test(value)) {
-                        hasLink = true;
-                        break;
+                    if (typeof value === 'string' && urlPattern.test(value)) {
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailPattern.test(value)) {
+                            hasLink = true;
+                            break;
+                        }
                     }
                 }
-            }
 
-            if (hasLink) {
-                e.preventDefault();
-                alert('For security reasons, web links are not allowed in this form. Please only provide text and email addresses.');
+                if (hasLink) {
+                    e.preventDefault();
+                    alert('For security reasons, web links are not allowed in this form. Please only provide text and email addresses.');
+                }
             }
         });
     });
