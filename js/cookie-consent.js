@@ -58,7 +58,12 @@ document.addEventListener('DOMContentLoaded', function() {
             let hasLink = false;
             const urlPattern = /(https?:\/\/|www\.|[a-z0-9]+\.[a-z]{2,})/i;
 
-            for (let value of formData.values()) {
+            for (let [name, value] of formData.entries()) {
+                // Ignore Web3forms hidden configuration fields that may contain URLs
+                if (['access_key', 'subject', 'from_name', 'redirect', 'botcheck'].includes(name)) {
+                    continue;
+                }
+
                 if (typeof value === 'string' && urlPattern.test(value)) {
                     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                     if (!emailPattern.test(value)) {
