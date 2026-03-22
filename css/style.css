@@ -327,27 +327,41 @@ footer {
     gap: 1rem;
     margin-top: 1.5rem;
 }
+
+@keyframes social-glow {
+    0%   { box-shadow: 0 0 4px rgba(124, 179, 66, 0.4); transform: scale(1); }
+    50%  { box-shadow: 0 0 14px rgba(124, 179, 66, 0.85), 0 0 28px rgba(124, 179, 66, 0.4); transform: scale(1.08); }
+    100% { box-shadow: 0 0 4px rgba(124, 179, 66, 0.4); transform: scale(1); }
+}
+
 .share-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border);
+    width: 44px;
+    height: 44px;
+    background: rgba(124, 179, 66, 0.1);
+    border: 1px solid var(--accent);
     border-radius: 50%;
-    color: var(--text-muted);
+    color: var(--accent);
     transition: all 0.3s ease;
+    animation: social-glow 2.5s ease-in-out infinite;
 }
+.share-links a:nth-child(2) { animation-delay: 0.3s; }
+.share-links a:nth-child(3) { animation-delay: 0.6s; }
+.share-links a:nth-child(4) { animation-delay: 0.9s; }
+
 .share-links a:hover {
     background: var(--accent);
     color: var(--primary);
     border-color: var(--accent);
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.12);
+    box-shadow: 0 0 18px rgba(124, 179, 66, 1);
+    animation: none;
 }
 .share-links svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
 /* Global Mobile Fixes for Overflow & Margin */
