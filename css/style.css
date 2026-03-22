@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --primary: #030712; /* Very Deep Navy */
     --secondary: #111827; /* Slate 900 */
     --accent: #7CB342; /* Action Green (Yellow-leaning Success Green) */
@@ -29,6 +29,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 body {
