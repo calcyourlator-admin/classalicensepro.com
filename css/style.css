@@ -161,7 +161,7 @@ nav {
     transition: color 0.2s;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: var(--accent) !important;
 }
 
