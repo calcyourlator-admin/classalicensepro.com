@@ -70,6 +70,18 @@ section {
     padding: 6rem 0;
 }
 
+.content-sidebar-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+}
+
+@media (max-width: 768px) {
+    .content-sidebar-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Components */
 .btn {
     display: inline-flex;
